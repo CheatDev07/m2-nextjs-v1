@@ -1,5 +1,4 @@
 "use client";
-
 import DesktopNavbarComponent from "./DesktopNavbarComponent";
 import MobileNavbarComponent from "./MobileNavbarComponent";
 export interface MenuItem {
