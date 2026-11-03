@@ -16,9 +16,13 @@ export default function ProductCardListComponents() {
       const data = await respones.json(); //convert from json to js object
       setProducts(data.products);
     }
-
     fetchData(); //calling fetchData function
   },[])
+
+  // There are 3 dependencies of useEffect hook
+  // 1. empty depedencies
+  // 2. array dependencies [] : mount once but use forever 
+  // 3. array list dependencies : [id], [uuid]
 
   return (
     <section className="container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 p-8 gap-8 mx-auto">

@@ -1,0 +1,23 @@
+
+import ProductDetailDisplayComponent from "@/components/products/detail/ProductDetailDisplayComponent";
+
+const getSingleProduct = (proId: number) => 
+  fetch(`${process.env.DUMMY_BASE_URL}/products/${proId}`)
+  .then(data => data.json())
+  .then(product => product)
+  .catch(error => error)
+
+export default async function ProductDetailPage({
+  params
+}:{
+   params: Promise<{productId: number}>
+}) {
+  const {productId} = await params;
+
+  const singleProduct = getSingleProduct(productId);
+  console.log(`==> single product: `, singleProduct);
+
+  return (
+    <ProductDetailDisplayComponent product={singleProduct}/>
+  )
+}

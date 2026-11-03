@@ -10,7 +10,8 @@ import {
 } from "@/components/ui/card";
 import Image from "next/image";
 
-interface ProductResponse {
+export interface ProductResponse {
+ id?: number;
  images: string[],
  title: string,
  description: string,
