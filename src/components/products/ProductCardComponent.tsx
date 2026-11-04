@@ -11,6 +11,7 @@ import {
 import Image from "next/image";
 
 export interface ProductResponse {
+num?: number;
  id?: number;
  images: string[],
  title: string,

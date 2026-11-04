@@ -22,6 +22,7 @@ export default function ProductDetailUseSWRComponent({proId}:ProductIdType) {
 
   return (
     <ProductCardDetailComponent
+      num={1}
       images={data.images}
       title={data.title}
       description={data.description}

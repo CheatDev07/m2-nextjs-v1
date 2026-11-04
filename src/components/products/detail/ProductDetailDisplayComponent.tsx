@@ -14,6 +14,7 @@ export default function ProductDetailDisplayComponent({
   // console.log("Images ", images)
   return (
     <ProductCardDetailComponent
+      num={2}
       images={images}
       title={title}
       description={description}
