@@ -1,20 +1,21 @@
 
 'use client'
 
-import { ProductResponse } from "../ProductCardComponent";
 import { ProductCardDetailComponent } from "./ProductDetailComponent";
 import useSWR from 'swr'
 
-const fetcher = (...args:ProductResponse[]) => fetch(...args).then(res => res.json())
+const fetcher = (url:string) => fetch(url).then(res => res.json())
 
 type ProductIdType = {
   proId: number
 }
 
 export default function ProductDetailUseSWRComponent({proId}:ProductIdType) {
+
+  console.log(`===> ProductId in detail: `, proId)
  
   const { data, error, isLoading } = 
-  useSWR(`${process.env.NEXT_PUBLIC_DUMMY_BASE_URL}/products/${proId}`, fetcher)
+  useSWR(`/api/products/${proId}`, fetcher)
 
   if (error) return <div>failed to load</div>
   if (isLoading) return <div>loading...</div>

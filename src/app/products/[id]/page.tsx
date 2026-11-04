@@ -11,9 +11,10 @@ import ProductDetailUseSWRComponent from "@/components/products/detail/ProductDe
 export default async function ProductDetailPage({
   params
 }:{
-   params: Promise<{productId: number}>
+   params: Promise<{id: number}>
 }) {
-  const {productId} = await params;
+  const {id} = await params;
+  console.log(`ProductId = `, id)
 
   // const singleProduct = getSingleProduct(productId);
   // console.log(`==> single product: `, singleProduct);
@@ -21,6 +22,6 @@ export default async function ProductDetailPage({
   return (
     // <ProductDetailDisplayComponent product={singleProduct}/>
 
-    <ProductDetailUseSWRComponent proId={productId}/>
+    <ProductDetailUseSWRComponent proId={id}/>
   )
 }
