@@ -31,7 +31,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
        <Suspense fallback={<h1 className="text-9xl text-center">Loading...</h1>}>
        <NavbarComponent/>
         {children} 
-        <footer className="bg-blue-500">Footer</footer>
+        {/* <footer className="bg-blue-500">Footer</footer> */}
        </Suspense>
         
       </body>

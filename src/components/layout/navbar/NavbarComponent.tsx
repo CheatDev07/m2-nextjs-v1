@@ -1,4 +1,5 @@
 "use client";
+import { usePathname } from "next/navigation";
 import DesktopNavbarComponent from "./DesktopNavbarComponent";
 import MobileNavbarComponent from "./MobileNavbarComponent";
 export interface MenuItem {
@@ -7,6 +8,10 @@ export interface MenuItem {
 }
 
 const NavbarComponent = () => {
+
+  const pathname = usePathname();
+  if (pathname.startsWith('/dashboard')) return null
+  else 
   return (
     <section>
       <div className="container">
